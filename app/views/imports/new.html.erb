@@ -1,0 +1,10 @@
+<h1>Import Portals</h1>
+<%= form_with(url: imports_path(@import), local: true, multipart: true) do |form| %>
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.file_field :file %>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Upload' %>
+  </div>
+<% end %>
