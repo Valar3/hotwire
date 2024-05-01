@@ -25,6 +25,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       if @quote.save
+        format.turbo_stream
         format.html { redirect_to quotes_path, notice: 'Quote was successfully created.' }
         format.json { render :show, status: :created, location: @quote }
       else

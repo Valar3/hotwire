@@ -4,7 +4,7 @@
       <%= quote.errors.full_messages.to_sentence.capitalize %>
     </div>
   <% end %>
-  <%= f.text_field "data[author]", value: record.data['author'] %>
-  <%= f.text_field "data[content]", value: record.data['content '] %>
+  <%= f.text_field :author%>
+  <%= f.text_field :content%>
   <%= f.submit class: "btn btn--secondary" %>
 <% end %>
