@@ -1,0 +1,14 @@
+{
+  "name": "hotwire",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Valar3/hotwire.git",
+  "author": "Wojciech Balon <balonw@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:css": "sass app/assets/stylesheets/application.scss:public/assets/application.css"
+  },
+  "dependencies": {
+    "sass": "^1.75.0"
+  }
+}
