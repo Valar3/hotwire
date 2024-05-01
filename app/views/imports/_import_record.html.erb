@@ -1,0 +1,32 @@
+<%= turbo_frame_tag dom_id(record) do %>
+  <tr class="<%= 'bg-red-100' if record.error_messages.any? %>">
+    <% if record.error_messages.any? %>
+      <td colspan="2" class="px-4 py-2">
+        <div class="text-red-500">
+          <% record.error_messages.each do |message| %>
+            <p class="text-sm"><%= message %></p>
+          <% end %>
+        </div>
+      </td>
+    <% end %>
+  </tr>
+  <tr>
+    <%= form_with(model: record, url: import_import_record_path(@import, record), method: :patch) do |f| %>
+      <td>
+        <%= f.fields_for :data do |df| %>
+          <div>
+            <%= df.label :author %>
+            <%= df.text_field :author, value: record.data['author'] %>
+          </div>
+          <div>
+            <%= df.label :content %>
+            <%= df.text_field :content, value: record.data['content'] %>
+          </div>
+        <% end %>
+      </td>
+      <td>
+        <%= f.submit 'Update', class: 'btn btn--primary' %>
+      </td>
+    <% end %>
+  </tr>
+<% end %>

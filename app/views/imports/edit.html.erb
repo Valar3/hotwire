@@ -1,0 +1,18 @@
+<h1>Edit Import</h1>
+<%= turbo_frame_tag 'error_count' do %>
+  <p id="error_count">Total errors: <%= @import.error_count %></p>
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @import_records.each do |record| %>
+      <%= render 'import_record', record: record %>
+    <% end %>
+  </tbody>
+</table>
+<%= button_to 'Import', import_import_path(@import), method: :post, class: 'btn btn--secondary' %>
